@@ -50,6 +50,8 @@ br.knex.arthur_nicolas\
 4. Compile programa em `ArthurNicolasApplication.java`
 5. Faça requisições usando Postman ou outa ferramenta.
 
+### [Vídeo tutorial Passo a Passo](https://youtu.be/ht7ePLvtcZQ)
+
 ## \>> Endpoints
 
 **OBS.:** @RequestParam apenas em `/deputado/{id}`
@@ -85,6 +87,26 @@ A aplicação segue uma arquitetura em **camadas**, organizada em pacotes com re
 | **Main**            | `ArthurNicolasApplication.java`| Classe principal que inicializa o Spring Boot                                   |
 
 ---
+## Checklist
+| Item                                           | Atendido? |
+| ---------------------------------------------- | --- |
+| `README.md` com instruções claras              | ☑    |
+| API funcional com endpoints documentados       | ☑    |
+| Banco de dados configurado corretamente        | ☑    |
+| Código fonte versionado no GitHub              | ☑    |
+| Instruções de como rodar o projeto localmente  | ☑    |
+| Dockerfile e/ou docker-compose (se aplicável)  | ☐   |
+| Uso de boas práticas (nomes, organização, etc) | ☑    |
+| Tratamento de erros                            | ☐   |
+
+| Item                                                     | Incluído? |
+| -------------------------------------------------------- | ------ |
+| Testes automatizados (unitários/integrados)              | ☐      |
+| Deploy online (Render, Railway, Vercel, etc)             | ☐      |
+| Utilização de design patterns relevantes                 | ☑       |
+| Readme com GIFs ou vídeos demonstrando a aplicação       |  ☑      |
+| Organização em camadas (Controller, Service, Repository) | ☑       |
+
 
 ### Fluxo de Funcionamento
 
@@ -113,4 +135,3 @@ Antes disso meu conhecimento era limitado em Estrutura de Dados e Algoritmos que
 2. Criar a Query manualmente usando JPQL para fazer o `ResponseDTO` para os Request HTTP (Não escrever em sí, mas sim conseguir descobrir essa solução)
 3. Ler o `CSV` e fazer o Parsing para um `DTO` (Novamente a dificuldade foi descobrir que existia uma dependência só pra isso, tentei fazer manualmente mas seria 10x mais trabalhoso e confuso)
 4. Entender a estrutura de camadas, analisar e aplicar o **princípio da responsabilidade única** (Foi a primeira vez fazendo um projeto com mais de 1 package)
-# API-test-knex
