@@ -113,3 +113,4 @@ Antes disso meu conhecimento era limitado em Estrutura de Dados e Algoritmos que
 2. Criar a Query manualmente usando JPQL para fazer o `ResponseDTO` para os Request HTTP (Não escrever em sí, mas sim conseguir descobrir essa solução)
 3. Ler o `CSV` e fazer o Parsing para um `DTO` (Novamente a dificuldade foi descobrir que existia uma dependência só pra isso, tentei fazer manualmente mas seria 10x mais trabalhoso e confuso)
 4. Entender a estrutura de camadas, analisar e aplicar o **princípio da responsabilidade única** (Foi a primeira vez fazendo um projeto com mais de 1 package)
+# API-test-knex
