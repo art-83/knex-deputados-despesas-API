@@ -74,38 +74,38 @@ A aplicação segue uma arquitetura em **camadas**, organizada em pacotes com re
 
 ### Lógica da Aplicação
 
-| Camada              | Pacote                         | Função principal                                                                |
-|---------------------|--------------------------------|---------------------------------------------------------------------------------|
-| **Entrada (API)**   | `controllers`                  | Define os endpoints REST que recebem e respondem às requisições HTTP            |
-| **Serviços**        | `services`                     | Contém a lógica de negócio e orquestra chamadas aos repositórios e importadores |
-| **Repositórios**    | `repositories`                 | Interface com o banco de dados via Spring Data JPA + Queries personalizadas     |
-| **Modelos**         | `models`                       | Representa as entidades persistidas no banco de dados                           |
-| **DTOs**            | `dto`, `dto.response`          | Estruturas de dados transferidos entre camadas (input/output da API)            |
-| **Mappers**         | `mappers`                      | Convertem entre Modelos e DTOs                                                  |
-| **Importadores**    | `importer.csv`, `importer.http`| Lidam com ingestão de dados externos via CSV ou API HTTP                        |
-| **Configuração**    | `configuration`                | Define configurações da aplicação                                               |
-| **Main**            | `ArthurNicolasApplication.java`| Classe principal que inicializa o Spring Boot                                   |
+| Camada            | Pacote                          | Função principal                                                                |
+|-------------------|---------------------------------|---------------------------------------------------------------------------------|
+| **Entrada (API)** | `controllers`                   | Define os endpoints REST que recebem e respondem às requisições HTTP            |
+| **Serviços**      | `services`                      | Contém a lógica de negócio e orquestra chamadas aos repositórios e importadores |
+| **Repositórios**  | `repositories`                  | Interface com o banco de dados via Spring Data JPA + Queries personalizadas     |
+| **Modelos**       | `models`                        | Representa as entidades persistidas no banco de dados                           |
+| **DTOs**          | `dto`, `dto.response`           | Estruturas de dados transferidos entre camadas (input/output da API)            |
+| **Mappers**       | `mappers`                       | Convertem entre Modelos e DTOs                                                  |
+| **Importadores**  | `importer.csv`, `importer.http` | Lidam com ingestão de dados externos via CSV ou API HTTP                        |
+| **Configuração**  | `configuration`                 | Define configurações da aplicação                                               |
+| **Main**          | `ArthurNicolasApplication.java` | Classe principal que inicializa o Spring Boot                                   |
 
 ---
 ## Checklist
-| Item                                           | Atendido? |
-| ---------------------------------------------- | --- |
-| `README.md` com instruções claras              | ☑    |
-| API funcional com endpoints documentados       | ☑    |
-| Banco de dados configurado corretamente        | ☑    |
-| Código fonte versionado no GitHub              | ☑    |
-| Instruções de como rodar o projeto localmente  | ☑    |
-| Dockerfile e/ou docker-compose (se aplicável)  | ☐   |
-| Uso de boas práticas (nomes, organização, etc) | ☑    |
-| Tratamento de erros                            | ☐   |
+| Requisitos Obrigatórios                                                    | Atendido? |
+|----------------------------------------------------------------------------|-----------|
+| Implementação de uma API RESTful                                           | ☑         |
+| Organização dos Dados no Banco de Dados (Endpoint de Upload/Processamento) | ☑         |
+| Listagem de Deputados por Estado                                           | ☑         |
+| Endpoint de Relatório (Somatório de Despesas)                              | ☑         |
+| Listagem de Despesas                                                       | ☑         |
+| Uso de boas práticas (nomes, organização, etc)                             | ☑         |
 
-| Item                                                     | Incluído? |
-| -------------------------------------------------------- | ------ |
-| Testes automatizados (unitários/integrados)              | ☐      |
-| Deploy online (Render, Railway, Vercel, etc)             | ☐      |
-| Utilização de design patterns relevantes                 | ☑       |
-| Readme com GIFs ou vídeos demonstrando a aplicação       |  ☑      |
-| Organização em camadas (Controller, Service, Repository) | ☑       |
+| Requisitos Opcionais    | Atendido? |
+|-------------------------|-----------|
+| Docker/Docker Compose   | ☐         |
+| Deploy da aplicação     | ☐         |
+| S.O.L.I.D.              | ☑         |
+| Uso de PostgreSQL       | ☑         |
+| Monitoramento de erros  | ☐         |
+| Testes automatizados    | ☐         |
+| Documentação detalhada  | ☑         |
 
 
 ### Fluxo de Funcionamento
@@ -128,7 +128,8 @@ A aplicação segue uma arquitetura em **camadas**, organizada em pacotes com re
 ## \>> Observações gerais sobre o desenvolvimento
 Essa API RESTful foi a primeira API que fiz em toda minha vida, e o primeiro projeto usando algum Framework, e finalmente vi e entendi a utilidade deles, fazia tempo que queria fazer algo parecido mas pela rotina da universidade, sempre deixei como prioridade secundária, mas finalmente saiu do papel.\
 \
-Antes disso meu conhecimento era limitado em Estrutura de Dados e Algoritmos que eu praticava no Leet Code, cada passo foi lento pra construir esse projeto mas valeu muito a pena, aumentou muito minha visão de como são as coisas e tenho orgulho de saber o que cada linha desse código faz, logicamente uma aplicação real vai ser mais complexa que isso, mas estou 100% disposto para aprender mais, e acredito que estar inserido em projetos reais vai acelerar muito essa curva de aprendizado.
+Antes disso meu conhecimento era limitado em Estrutura de Dados e Algoritmos que eu praticava no Leet Code, cada passo foi lento pra construir esse projeto mas valeu muito a pena, aumentou muito minha visão de como são as coisas e tenho orgulho de saber o que cada linha desse código faz, logicamente uma aplicação real vai ser mais complexa que isso, mas estou 100% disposto para aprender mais, e acredito que estar inserido em projetos reais vai acelerar muito essa curva de aprendizado.\
+**OBS.:** Sobre a documentação, eu prefiro deixar a explicação no `README.md`, meus comentários no código são objetivos e breves, pois **_EU ACHO_** que meu código é de fácil leitura, e respeita vários fundamentos importantes de **Clean Code**, evito ao máximo multiplos níveis de identação (Escadinhas de `if` e `else`), dou preferência à nomes claros e extensos para variáveis e tento deixar o nome dos meus métodos autoexplicativos, mas claro, estou aberto para feedbacks e conselhos para melhorar como programador, novamente, é só uma visão **_PESSOAL_** do que _**EU INTERPRETO**_ como um código limpo.
 ### Dificuldades que enfrentei no projeto por ordem de dificuldade:
 1. **`Docker`**. Infelizmente não consegui fazer a containerização da minha aplicação, tentei fazer na tarde do ultimo dia do prazo mas no fim das contas eu não estava entendendo o que estava escrevendo no `Dockerfile` e o `docker-compose.yml`, decidi remover totalmente do projeto pois não queria só fazer funcionar, o prazo estava acabando e tive que tomar essa decisão.
 1. Modelagem das `Models` para popular meu banco de dados.
