@@ -11,7 +11,6 @@ A aplicação oferece integração com arquivos CSV e API HTTP externa, armazena
 - Java 17
 - Spring Boot (Spring Data JPA, SpringWeb, Lombok, PostgresSQL Driver)
 - PostgreSQL
-- Docker e Docker Compose
 - Maven
 
 ---

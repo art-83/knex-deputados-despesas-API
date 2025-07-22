@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 @Service
@@ -15,13 +16,9 @@ public class DeputadoQueryService {
     @Autowired
     private DeputadoRepository deputadoRepository;
 
-    public List<DeputadoResponseDTO> getAllDeputadoData() {
-        return deputadoRepository.getAllDeputatoResponse();
-    }
-
     // Retorna lista de Deputado filtrada por: "UF" (PB, SP, RJ, RN, RS, MG, AM...).
     public List<DeputadoResponseDTO> listByUf(String uf) {
-        List<DeputadoResponseDTO> allDeputadoData = getAllDeputadoData();
+        List<DeputadoResponseDTO> allDeputadoData = deputadoRepository.getAllDeputatoResponse();
 
         List<DeputadoResponseDTO> deputadoListByUf = new ArrayList<>();
 
